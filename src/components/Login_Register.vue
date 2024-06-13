@@ -2,10 +2,10 @@
 import axios from "axios";
 
 export default {
-  name: [
-    'SignUp',
-    'SignIn'
-  ],
+  // name: [
+  //   'SignUp',
+  //   'SignIn'
+  // ],
   emits: ['close'],
   data() {
     return {
@@ -132,10 +132,9 @@ export default {
             <div class="mb-3">
   <!--            <label for="exampleFormControlInput1" class="form-label">Логин</label>-->
               <input type="email" class="form-control input-color" id="inputLogin" v-model="inputLogin" placeholder="mail@example.com">
-              <div v-if="errors.inputLogin" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-                <div>{{ errors.inputLogin }}</div>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" @click="clearError('inputLogin')" aria-label="Close"></button>
-              </div>
+<!--              <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">-->
+<!--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+<!--              </div>-->
             </div>
             <div class="mb-3">
   <!--            <label for="inputPassword5" class="form-label">Пароль</label>-->
