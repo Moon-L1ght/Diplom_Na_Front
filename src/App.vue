@@ -11,18 +11,17 @@
 
 <script>
 import Header from './components/Header.vue'
-import Header_auth from './components/Header_auth.vue'
-import Content from './components/Content.vue'
+// import Header_auth from './components/Header_auth.vue'
 import Footer from './components/Footer.vue'
-import Catalog from './components/Pages/Catalog.vue'
+// import Catalog from './components/Pages/Category.vue'
+
 
 export default {
   components: {
     Header,
-    Header_auth,
-    Content,
+    // Header_auth,
     Footer,
-    Catalog,
+    // Catalog,
   }
 }
 </script>
