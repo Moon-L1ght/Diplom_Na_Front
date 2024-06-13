@@ -30,10 +30,10 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item "><router-link to="/catalog" class="nav-link text-black nav-text fw-semibold">Каталог</router-link></li>
           <li class="nav-item "><router-link to="/catalog" class="nav-link text-black nav-text fw-semibold">Услуги</router-link></li>
-          <li class="nav-item "><router-link to="/catalog" class="nav-link text-black nav-text fw-semibold">О нас</router-link></li>
+          <li class="nav-item "><router-link to="/about" class="nav-link text-black nav-text fw-semibold">О нас</router-link></li>
         </ul>
         <div class="nav justify-content-end">
-          <button class="btn btn-dark me-2">Корзина</button>
+          <button class="btn btn-dark me-2"><router-link to="/cart" class="text-reset">Корзина</router-link></button>
         </div>
         <div class="nav justify-content-end">
           <li class="navbar-nav nav-item dropdown">

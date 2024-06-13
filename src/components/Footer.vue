@@ -8,26 +8,13 @@
         <div class="col-md-3">
           <h5>Ссылки</h5>
           <ul class="nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link text-black nav-text fw-semibold p-0">Каталог</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-black nav-text fw-semibold p-0">О нас</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-black nav-text fw-semibold p-0">Контакты</a></li>
+            <li class="nav-item"><router-link to="/catalog" class="nav-link text-black nav-text fw-semibold p-0">Каталог</router-link></li>
+            <li class="nav-item"><router-link to="/services" class="nav-link text-black nav-text fw-semibold p-0">Услуги</router-link></li>
+            <li class="nav-item"><router-link to="/about" class="nav-link text-black nav-text fw-semibold p-0">О нас</router-link></li>
           </ul>
         </div>
         <div class="col-md-3">
-          <h5>Topic</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Topic</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-            <li class="nav-item"><a href="#" class="nav-link p-0">Page</a></li>
-          </ul>
+
         </div>
       </div>
       <div class="row mt-4">
@@ -40,9 +27,7 @@
 </template>
 
 <script>
-export default {
-  name: 'Footer'
-}
+
 </script>
 
 <style scoped>

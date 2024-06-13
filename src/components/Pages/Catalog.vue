@@ -41,24 +41,28 @@ export default {
 
 <template>
   <div class="container mt-5">
-    <h1 class="text-center">Динамики</h1>
+    <h1 class="text-center mb-5">Каталог</h1>
     <div class="row">
       <div v-for="category in categories" :key="category.title" class="col-md-3 mb-4">
-        <div class="card h-100">
-          <img :src="category.image" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{ category.title }}</h5>
-            <p class="card-text">
-              <span class="text-danger">({{ category.count }})</span><br>
-              от {{ category.price }} ₽
-            </p>
+        <router-link to="/category" class="text-style">
+          <div class="card h-100">
+            <img :src="category.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ category.title }}</h5>
+              <p class="card-text">
+                <span class="text-success">({{ category.count }})</span><br>
+                от {{ category.price }} ₽
+              </p>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
+.text-style {
+  text-decoration: none;
+}
 </style>

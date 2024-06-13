@@ -1,9 +1,8 @@
 <template>
-
   <div class="container">
     <div class="row mt-3">
       <!-- Filters Section -->
-      <div class="col-md-3 mb-3">
+      <div class="col-md-3 margin-top mb-3">
         <div class="accordion" id="filterAccordion">
           <div class="accordion-item" >
             <h2 class="accordion-header" id="headingOne">
@@ -85,7 +84,7 @@
       <!-- Product List Section -->
       <div class="col-md-9">
         <div class="d-flex justify-content-end mb-3">
-          <select class="form-select w-auto" v-model="sortOrder">
+          <select class="form-select w-auto shadow-color" v-model="sortOrder">
             <option value="ascending">По возрастанию цены</option>
             <option value="descending">По убыванию цены</option>
           </select>
@@ -112,14 +111,15 @@
     </div>
     <!-- Category Information Section -->
     <div class="mt-4 fw-light font-size">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu imperdiet
-      sem. Nam accumsan leo at iaculis blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis justo
-      ante, viverra vitae lectus sit amet, luctus posuere eros. Aliquam nulla sem, eleifend ut ultricies molestie,
-      blandit sed nulla. Sed a laoreet tortor, quis condimentum felis. Ut nibh est, blandit eget augue ac, rhoncus
-      tincidunt turpis. Duis feugiat turpis nec mauris vehicula sodales. Vestibulum ante ipsum primis in faucibus orci
-      luctus et ultrices posuere cubilia curae; Vivamus egestas, sapien ac fringilla semper, justo sem lacinia neque,
-      quis tincidunt quam ipsum vel elit. Nunc sodales nisl vel scelerisque porttitor. Nullam convallis neque tellus,
-      nec pellentesque metus rhoncus sed.
+<!--      написать текст в каждую категорию и получать с бека  -->
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu imperdiet
+          sem. Nam accumsan leo at iaculis blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis justo
+          ante, viverra vitae lectus sit amet, luctus posuere eros. Aliquam nulla sem, eleifend ut ultricies molestie,
+          blandit sed nulla. Sed a laoreet tortor, quis condimentum felis. Ut nibh est, blandit eget augue ac, rhoncus
+          tincidunt turpis. Duis feugiat turpis nec mauris vehicula sodales. Vestibulum ante ipsum primis in faucibus orci
+          luctus et ultrices posuere cubilia curae; Vivamus egestas, sapien ac fringilla semper, justo sem lacinia neque,
+          quis tincidunt quam ipsum vel elit. Nunc sodales nisl vel scelerisque porttitor. Nullam convallis neque tellus,
+          nec pellentesque metus rhoncus sed.
     </div>
   </div>
 </template>
@@ -211,4 +211,7 @@ export default {
   box-shadow: 0 0 0 0.25rem rgba(43, 43, 44, 0.25);
 }
 
+.margin-top {
+  margin-top: 54px;
+}
 </style>
