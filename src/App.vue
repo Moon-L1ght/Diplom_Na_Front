@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-<!--    <Header_auth />-->
+<!--    <Header_auth :user="user" />-->
     <Header />
     <router-view />
-<!--    <Catalog />-->
     <Footer />
   </div>
 
@@ -13,16 +12,28 @@
 import Header from './components/Header.vue'
 // import Header_auth from './components/Header_auth.vue'
 import Footer from './components/Footer.vue'
-// import Catalog from './components/Pages/Category.vue'
-
+import axios from "axios";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
-    Header,
     // Header_auth,
+    Header,
     Footer,
-    // Catalog,
-  }
+  },
+  data () {
+    return {
+      user: null
+    }
+  },
+  // async created() {
+  //   const response = await axios.get('http://localhost:3001/login', {
+  //     headers: {
+  //       'Authorization': `Bearer ${localStorage.getItem('token')}`,
+  //     }
+  //   });
+  //   this.$store.dispatch('user', response.data);
+  // }
 }
 </script>
 

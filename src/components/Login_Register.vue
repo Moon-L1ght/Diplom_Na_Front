@@ -1,5 +1,7 @@
 <script>
 import axios from "axios";
+import "@/vuex/index.js"
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   // name: [
@@ -11,13 +13,118 @@ export default {
     return {
       inputLogin: '',
       inputPassword: '',
+      name: '',
       inputLoginRegistration: '',
       inputPasswordRegistration: '',
       inputPasswordConfirm: '',
       phoneNumber: '',
-      error: '',
+      // error: '',
     }
   },
+  mounted() {
+    this.$axios.get('login')
+      .then((response) => {
+        this.inputLogin = "test@test.ru";
+        this.inputPassword = "testtest";
+      })
+        .catch(error => {
+          console.error(error);
+        });
+  },
+  computed: {
+    ...mapGetters(["getAuthToken", "getUserEmail", "getUserID", "isLoggedIn"]),
+  },
+  methods: {
+    ...mapActions(["registerUser", "loginUser", "logoutUser"]),
+    // async signIn() {
+    //   try {
+    //     const response = await axios.post('http://localhost:3001/login', {
+    //       "user": {
+    //         email: this.inputLogin,
+    //         password: this.inputPassword
+    //       },
+    //     }, {
+    //       // withCredentials: true // если используете сессионные куки
+    //     });
+    //     localStorage.setItem('token', response.data.token);
+    //     this.$store.dispatch('token', response.data.token);
+    //     console.log(response.data.token);
+    //     console.log(response);
+    //     console.log('Login successful:', response.data);
+    //     // Здесь вы можете обработать успешный логин, например, сохранить токен и перенаправить пользователя
+    //   } catch (error) {
+    //     if (error.response) {
+    //       // Сервер ответил с кодом, отличным от 2xx
+    //       console.error('Login failed:', error.response.data);
+    //     } else if (error.request) {
+    //       // Запрос был сделан, но ответ не получен
+    //       console.error('No response received:', error.request);
+    //     } else {
+    //       // Ошибка при настройке запроса
+    //       console.error('Error setting up request:', error.message);
+    //     }
+    //     console.error('Full error object:', error);
+    //   }
+    // },
+    // async signUp() {
+    //   try {
+    //     const response = await axios.post('http://localhost:3001/signup', {
+    //       "user": {
+    //         name: this.name,
+    //         email: this.inputLoginRegistration,
+    //         password: this.inputPasswordRegistration,
+    //       }
+    //     }, {
+    //       // withCredentials: true // если используете сессионные куки
+    //     });
+    //     console.log('Login successful:', response.data);
+    //     // Здесь вы можете обработать успешный логин, например, сохранить токен и перенаправить пользователя
+    //   } catch (error) {
+    //     if (error.response) {
+    //       // Сервер ответил с кодом, отличным от 2xx
+    //       console.error('Login failed:', error.response.data);
+    //     } else if (error.request) {
+    //       // Запрос был сделан, но ответ не получен
+    //       console.error('No response received:', error.request);
+    //     } else {
+    //       // Ошибка при настройке запроса
+    //       console.error('Error setting up request:', error.message);
+    //     }
+    //     console.error('Full error object:', error);
+    //   }
+    // }
+
+    signUp(event) {
+      event.preventDefault();
+      let data = {
+        user: {
+          name: this.name,
+          email: this.signUpEmail,
+          password: this.signUpPassword,
+        },
+      };
+      this.registerUser(data);
+      this.resetData();
+    },
+    signIn(event) {
+      event.preventDefault();
+      let data = {
+        user: {
+          email: this.inputLogin,
+          password: this.inputPassword
+        },
+      };
+      this.loginUser(data);
+      this.resetData();
+    },
+    resetData() {
+      this.signUpEmail = "";
+      this.signUpPassword = "";
+      this.loginEmail = "";
+      this.loginPassword = "";
+    },
+
+  }
   // created() {
   //   this.checkSignedIn()
   // },
@@ -120,7 +227,7 @@ export default {
 
 <template>
 
-  <form @submit.prevent="">
+  <form @submit="signIn">
     <div v-bind="$attrs" class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -131,14 +238,14 @@ export default {
           <div class="modal-body">
             <div class="mb-3">
   <!--            <label for="exampleFormControlInput1" class="form-label">Логин</label>-->
-              <input type="email" class="form-control input-color" id="inputLogin" v-model="inputLogin" placeholder="mail@example.com">
+              <input type="email" class="form-control input-color" v-model="inputLogin" placeholder="mail@example.com" required />
 <!--              <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">-->
 <!--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
 <!--              </div>-->
             </div>
             <div class="mb-3">
   <!--            <label for="inputPassword5" class="form-label">Пароль</label>-->
-              <input type="password" id="inputPassword" v-model="inputPassword" class="form-control input-color" aria-describedby="passwordHelpBlock" placeholder="Пароль...">
+              <input type="password" v-model="inputPassword" class="form-control input-color" aria-describedby="passwordHelpBlock" placeholder="Пароль..." required />
             </div>
             <div class="text-center">
               Еще не зарегистрированы?
@@ -153,7 +260,7 @@ export default {
       </div>
     </div>
   </form>
-  <form @submit.prevent="">
+  <form @submit.prevent="signUp">
     <div v-bind="$attrs" class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -162,6 +269,10 @@ export default {
             <!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
           </div>
           <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label">Имя</label>
+              <input class="form-control input-color" id="name" v-model="name" placeholder="Имя">
+            </div>
             <div class="mb-3">
               <label for="inputLoginRegistration" class="form-label">Логин</label>
               <input type="email" class="form-control input-color" id="inputLoginRegistration" v-model="inputLoginRegistration" placeholder="name@example.com">
