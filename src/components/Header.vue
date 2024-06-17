@@ -39,19 +39,20 @@
         </ul>
         <div class="nav justify-content-end">
           <button class="btn btn-dark me-2"><router-link to="/cart" class="text-reset">Корзина</router-link></button>
-          <div class="nav justify-content-end" v-if="isLoggedIn">
-            <li class="navbar-nav nav-item dropdown">
+          <div class="nav justify-content-end" >
+            <li class="navbar-nav nav-item dropdown" v-if="isLoggedIn">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="../../Img/user.svg" alt="Logo" class="dropdown-item-icon" />
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
+                <li><router-link to="/profile" class="dropdown-item" >Личный кабинет</router-link></li>
+                <li><a class="dropdown-item" href="#">Создание товара</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" @click="logoutUser">Выход</a></li>
               </ul>
             </li>
+            <Login_form v-else/>
           </div>
-          <Login_form v-else/>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@
                 Наличие в магазине
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#filterAccordion">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#filterAccordion">
               <div class="accordion-body">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="inStock">
@@ -90,7 +90,9 @@
           </select>
         </div>
         <div class="list-group">
+          <router-link to="/product" class="clear-text">
           <div v-for="product in sortedProducts" :key="product.id" class="list-group-item d-flex justify-content-between align-items-center">
+
             <div class="d-flex align-items-center">
               <img :src="product.image" alt="Картинка" class="img-thumbnail me-3" style="width: 100px; height: 100px;">
               <div>
@@ -105,7 +107,9 @@
               <h5 class="fw-semibold">{{ product.price }} ₽</h5>
               <button class="btn btn-dark" :disabled="product.status === 'outOfStock'">В корзину</button>
             </div>
+
           </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -143,7 +147,7 @@ export default {
           image: 'https://via.placeholder.com/150',
           name: 'Название товара',
           description: 'небольшое описание',
-          price: 123,
+          price: 12,
           status: 'inStock',
           statusText: 'В наличии'
         },
@@ -152,7 +156,7 @@ export default {
           image: 'https://via.placeholder.com/150',
           name: 'Название товара',
           description: 'небольшое описание',
-          price: 1234,
+          price: 124,
           status: 'outOfStock',
           statusText: 'Нет в наличии'
         },
@@ -161,7 +165,7 @@ export default {
           image: 'https://via.placeholder.com/150',
           name: 'Название товара',
           description: 'небольшое описание',
-          price: 1234567,
+          price: 123,
           status: 'preOrder',
           statusText: 'Под заказ'
         },
@@ -170,7 +174,7 @@ export default {
           image: 'https://via.placeholder.com/150',
           name: 'Название товара',
           description: 'небольшое описание',
-          price: 1245,
+          price: 125,
           status: 'inStock',
           statusText: 'В наличии'
         }
@@ -204,6 +208,11 @@ export default {
   font-family: Arial;
   color: #969696;
   font-size: small;
+}
+
+.clear-text {
+  text-decoration: none;
+  color: #000
 }
 
 .shadow-color:focus {

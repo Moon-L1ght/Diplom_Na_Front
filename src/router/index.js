@@ -5,6 +5,9 @@ import Category from "@/components/Pages/Category.vue"
 import About from "@/components/Pages/About.vue";
 import Services from "@/components/Pages/Services.vue";
 import Cart from "@/components/Pages/Cart.vue";
+import Product from "@/components/Pages/Product.vue";
+import Order from "@/components/Pages/Order.vue";
+import Profile from "@/components/Pages/Profile.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -32,6 +35,18 @@ const router = createRouter({
         {
             path: '/cart',
             component: Cart,
+        },
+        {
+            path: '/product',
+            component: Product,
+        },
+        {
+            path: '/order',
+            component: Order,
+        },
+        {
+            path: '/profile',
+            component: Profile,
         }
     ],
     scrollBehavior(to, from, savedPosition) {

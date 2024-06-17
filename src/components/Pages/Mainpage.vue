@@ -3,19 +3,25 @@
     <div class="row">
       <div class="col-md-3 list-group list-group-flush d-flex flex-column">
         <a href="#" class="list-group-item list-group-item-action">
-          The current link item
+          Динамики
         </a>
         <a href="#" class="list-group-item list-group-item-action">
-          A second link item
+          Мультимедиа
         </a>
         <a href="#" class="list-group-item list-group-item-action">
-          A third link item
+          Вибро-шумоизоляция
         </a>
         <a href="#" class="list-group-item list-group-item-action">
-          A fourth link item
+          Приборы и датчики
         </a>
         <a href="#" class="list-group-item list-group-item-action">
-          A disabled link item
+          Кабель и комплектующие
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          Усилители и процессоры
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          Короба и подиумы
         </a>
       </div>
       <div class="col-md-9">
@@ -111,6 +117,10 @@ export default {
 .list-group {
   max-height: none; /* Ограничиваем максимальную высоту */
   overflow-y: auto; /* Добавляем вертикальную прокрутку */
+}
+
+.list-group-item {
+  min-height: 45px;
 }
 
 .clear-dots {

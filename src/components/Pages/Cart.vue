@@ -4,59 +4,59 @@ export default {
     return {
       items: [
         {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
+          name: 'AurA Venom-D1.800 Ultra',
+          price: 11690,
           quantity: 1,
-          image: 'path/to/image1.jpg'
+          image: 'https://www.loudsound.ru/upload/mw4w6YsQolD7BYBVBagv/upload/iblock/952/61yia6hemojb9kzpv6zv4p9cpiqid0z6/AurA-Venom_D1.800-Ultra-1.jpg'
         },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },
-        {
-          name: 'Acv ADX-211 BM DSP',
-          price: 7777,
-          quantity: 1,
-          image: 'path/to/image1.jpg'
-        },  
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
+        // {
+        //   name: 'Acv ADX-211 BM DSP',
+        //   price: 7777,
+        //   quantity: 1,
+        //   image: 'path/to/image1.jpg'
+        // },
       ],
       // bonuses: 156
     }
@@ -91,7 +91,6 @@ export default {
 <template>
   <div class="container min-vw-75">
     <h1 class="mt-5 mb-4 text-center">Корзина</h1>
-<!--    <button class="btn btn-link" @click="clearCart">Очистить корзину</button>-->
     <table class="table table-light table-hover mt-3">
       <thead>
       <tr>
@@ -108,7 +107,6 @@ export default {
         <td>
           <img :src="item.image" class="img-thumbnail" alt="Item image" width="50" height="50">
           <span>{{ item.name }}</span>
-          <span v-if="item.isGift" class="text-danger">ПОДАРОК</span>
         </td>
         <td></td>
         <td>{{ item.price }} ₽</td>
@@ -124,10 +122,13 @@ export default {
       </tr>
       </tbody>
     </table>
-    <div class="float-end">
+    <div class="d-flex justify-content-end">
 <!--      <p>Бонусы на счёт: {{ bonuses }}</p>-->
       <p><strong>ИТОГО: {{ totalPrice }} ₽</strong></p>
-      <button class="btn btn-success">ОФОРМИТЬ ЗАКАЗ</button>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-outline-success mx-3" @click="clearCart">Очистить корзину</button>
+      <button class="btn btn-success"><router-link to="/order" class="clear-text">ОФОРМИТЬ ЗАКАЗ</router-link></button>
     </div>
   </div>
 </template>
@@ -135,5 +136,10 @@ export default {
 <style scoped>
 .min-vw-75 {
   min-height: 55vh;
+}
+
+.clear-text {
+  text-decoration: none;
+  color: #ffffff;
 }
 </style>
