@@ -155,8 +155,4 @@ img {
   color: black;
 }
 
-.swiper-button-next:hover {
-  opacity: 0.8;
-}
-
 </style>

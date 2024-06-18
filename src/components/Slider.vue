@@ -233,7 +233,6 @@ export default {
 <style>
 .swiper-button-next:after, .swiper-button-prev:after {
   background-color: #aaaaaa;
-  opacity: 0;
   color: #36714b;
 }
 </style>
