@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<!--    <Header_auth :user="user" />-->
+<!--    <Header_auth v-if="isLoggedIn"/>-->
     <Header />
     <router-view />
     <Footer />
@@ -10,22 +10,26 @@
 
 <script>
 import Header from './components/Header.vue'
-// import Header_auth from './components/Header_auth.vue'
+import Header_auth from './components/Header_auth.vue'
 import Footer from './components/Footer.vue'
+
 import axios from "axios";
-import { mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   components: {
-    // Header_auth,
+    Header_auth,
     Header,
     Footer,
   },
-  data () {
-    return {
-      user: null
-    }
-  },
+  // data () {
+  //   return {
+  //     user: null
+  //   }
+  // },
+  // methods: {
+  //   ...mapGetters(["isLoggedIn"]),
+  // }
   // async created() {
   //   const response = await axios.get('http://localhost:3001/login', {
   //     headers: {

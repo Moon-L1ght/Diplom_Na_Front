@@ -53,11 +53,11 @@
         </div>
 
       </div>
-      <div class="col-md-12">
-        <div class="mt-4">
+      <div class="col-md-12 mt-5">
+        <div class="mt-3">
           <Slider_Brands />
         </div>
-        <div class="mt-4">
+        <div class="mt-5">
           <h2>Новости</h2>
           <News />
         </div>

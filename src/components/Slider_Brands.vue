@@ -28,9 +28,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper/modules';
+import {auto} from "@popperjs/core";
 
 
 export default {
+  methods: {
+    auto() {
+      return auto
+    }
+  },
   components: {
     Swiper,
     SwiperSlide
@@ -39,35 +45,89 @@ export default {
     return {
       slides: [
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Alpine.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Alphard.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Aria.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Audionova.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Aura.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Braim.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Colt.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/DB.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'Img/Brands/Dego.webp',
         },
         {
-          image: 'https://via.placeholder.com/150',
-        }
+          image: 'Img/Brands/Dl.webp',
+        },
+        {
+          image: 'Img/Brands/Edge.webp',
+        },
+        {
+          image: 'Img/Brands/Gladen.webp',
+        },
+        {
+          image: 'Img/Brands/Hannibal.webp',
+        },
+        {
+          image: 'Img/Brands/Incar.webp',
+        },
+        {
+          image: 'Img/Brands/Infinity.webp',
+        },
+        {
+          image: 'Img/Brands/Kicker.webp',
+        },
+        {
+          image: 'Img/Brands/Kicx.webp',
+        },
+        {
+          image: 'Img/Brands/LoudSound.webp',
+        },
+        {
+          image: 'Img/Brands/Machete.webp',
+        },
+        {
+          image: 'Img/Brands/Manmade.webp',
+        },
+        {
+          image: 'Img/Brands/Nakamichi.webp',
+        },
+        {
+          image: 'Img/Brands/Nertz.webp',
+        },
+        {
+          image: 'Img/Brands/Pioneer.webp',
+        },
+        {
+          image: 'Img/Brands/Pride.webp',
+        },
+        {
+          image: 'Img/Brands/Prology.webp',
+        },
+        {
+          image: 'Img/Brands/Steg.webp',
+        },
+        {
+          image: 'Img/Brands/Teyes.webp',
+        },
+        {
+          image: 'Img/Brands/Ural.webp',
+        },
       ]
     };
   },
@@ -80,8 +140,15 @@ export default {
 </script>
 
 <style scoped>
+.mySwiper {
+  background-color: #ffffff;
+}
 .slide-content {
   text-align: center;
+}
+img {
+  height: 50px;
+  width: 159px;
 }
 
 .image-slider .swiper-button-next:after, .swiper-button-prev:after {

@@ -4,10 +4,6 @@ import "@/vuex/index.js"
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-  // name: [
-  //   'SignUp',
-  //   'SignIn'
-  // ],
   emits: ['close'],
   data() {
     return {
@@ -18,7 +14,6 @@ export default {
       inputPasswordRegistration: '',
       inputPasswordConfirm: '',
       phoneNumber: '',
-      // error: '',
     }
   },
   mounted() {
@@ -36,64 +31,6 @@ export default {
   },
   methods: {
     ...mapActions(["registerUser", "loginUser", "logoutUser"]),
-    // async signIn() {
-    //   try {
-    //     const response = await axios.post('http://localhost:3001/login', {
-    //       "user": {
-    //         email: this.inputLogin,
-    //         password: this.inputPassword
-    //       },
-    //     }, {
-    //       // withCredentials: true // если используете сессионные куки
-    //     });
-    //     localStorage.setItem('token', response.data.token);
-    //     this.$store.dispatch('token', response.data.token);
-    //     console.log(response.data.token);
-    //     console.log(response);
-    //     console.log('Login successful:', response.data);
-    //     // Здесь вы можете обработать успешный логин, например, сохранить токен и перенаправить пользователя
-    //   } catch (error) {
-    //     if (error.response) {
-    //       // Сервер ответил с кодом, отличным от 2xx
-    //       console.error('Login failed:', error.response.data);
-    //     } else if (error.request) {
-    //       // Запрос был сделан, но ответ не получен
-    //       console.error('No response received:', error.request);
-    //     } else {
-    //       // Ошибка при настройке запроса
-    //       console.error('Error setting up request:', error.message);
-    //     }
-    //     console.error('Full error object:', error);
-    //   }
-    // },
-    // async signUp() {
-    //   try {
-    //     const response = await axios.post('http://localhost:3001/signup', {
-    //       "user": {
-    //         name: this.name,
-    //         email: this.inputLoginRegistration,
-    //         password: this.inputPasswordRegistration,
-    //       }
-    //     }, {
-    //       // withCredentials: true // если используете сессионные куки
-    //     });
-    //     console.log('Login successful:', response.data);
-    //     // Здесь вы можете обработать успешный логин, например, сохранить токен и перенаправить пользователя
-    //   } catch (error) {
-    //     if (error.response) {
-    //       // Сервер ответил с кодом, отличным от 2xx
-    //       console.error('Login failed:', error.response.data);
-    //     } else if (error.request) {
-    //       // Запрос был сделан, но ответ не получен
-    //       console.error('No response received:', error.request);
-    //     } else {
-    //       // Ошибка при настройке запроса
-    //       console.error('Error setting up request:', error.message);
-    //     }
-    //     console.error('Full error object:', error);
-    //   }
-    // }
-
     signUp(event) {
       event.preventDefault();
       let data = {
@@ -120,108 +57,11 @@ export default {
     resetData() {
       this.signUpEmail = "";
       this.signUpPassword = "";
-      this.loginEmail = "";
-      this.loginPassword = "";
+      this.inputLogin = "";
+      this.inputPassword = "";
     },
 
   }
-  // created() {
-  //   this.checkSignedIn()
-  // },
-  // updated() {
-  //   this.checkSignedIn()
-  // },
-  // methods: {
-  //   signIn () {
-  //     this.$http.plain.post('/signin', { email: this.inputLogin, password: this.inputPassword })
-  //         .then(response => this.signInSuccesful(response))
-  //         .catch(error => this.signInFailed(error))
-  //   },
-  //   signInSuccesful (response) {
-  //     if (!response.data.csrf) {
-  //       this.signInFailed(response)
-  //       return
-  //     }
-  //     localStorage.csrf = response.data.csrf
-  //     localStorage.signedIn = true
-  //     this.error = ''
-  //     this.$router.push('/')
-  //   },
-  //   signInFailed (error) {
-  //     this.error = (error.response && error.response.data && error.response.data.error) || ''
-  //     delete localStorage.csrf
-  //     delete localStorage.signedIn
-  //   },
-  //   checkSignedIn () {
-  //     if (localStorage.signedIn) {
-  //       axios.get('/login')
-  //           .then((response) => {
-  //             this.inputLogin = response.data.email
-  //             this.inputPassword = response.data.password
-  //           })
-  //           .catch(error => {
-  //             console.error('error', error);
-  //           })
-  //     }
-  //   },
-  //   signUp () {
-  //     this.$http.plain.post('/signup', { email: this.inputLoginRegistration, password: this.inputPasswordRegistration, phoneNumber: this.phoneNumber })
-  //         .then(response => this.signUpSuccesful(response))
-  //         .catch(error => this.signUpFailed(error))
-  //   },
-  //   signUpSuccesful (response) {
-  //     if (!response.data.csrf) {
-  //       this.signUpFailed(response)
-  //       return
-  //     }
-  //     localStorage.csrf = response.data.csrf
-  //     localStorage.signedUp = true
-  //     this.error = ''
-  //     this.$router.push('/')
-  //   },
-  //   signUpFailed (error) {
-  //     this.error = (error.response && error.response.data && error.response.data.error) || ''
-  //     delete localStorage.csrf
-  //     delete localStorage.signedUp
-  //   },
-  //   // checkSignedIn () {
-  //   //   if (localStorage.signedin) {
-  //   //     this.$router.push('/')
-  //   //   }
-  //   // }
-
-
-
-    // onSubmitLogin() {
-    //   console.log(this.inputLogin);
-    //   console.log(this.inputPassword);
-    // },
-    // onSubmitRegister() {
-    //   console.log(this.inputLoginRegistration);
-    //   console.log(this.inputPasswordRegistration);
-    //   console.log(this.inputPasswordConfirm);
-    //   console.log(this.phoneNumber);
-    // },
-    // checkForm: function() {
-    //   this.errors = {}; // Сброс ошибок
-    //
-    //   if (this.inputLogin === '') {
-    //     this.errors.inputLogin = 'Name is required.';
-    //   }
-    //   if (this.inputPassword === '') {
-    //     this.errors.inputPassword = 'Email is required.';
-    //   }
-    //
-    //   if (!this.errors.inputLogin && !this.errors.inputPassword) {
-    //     // Если нет ошибок, выполните действие отправки формы
-    //     alert('Form submitted successfully!');
-    //   }
-    // },
-    // clearError: function(field) {
-    //   this.errors[field] = '';
-    // }
-  // },
-
 }
 </script>
 
@@ -254,7 +94,7 @@ export default {
           </div>
           <div class="modal-footer">
             <div id="liveAlertPlaceholder"></div>
-            <button class="btn btn-dark w-100" type="submit" value="submit" id="liveAlertBtn">Войти</button>
+            <button class="btn btn-dark w-100" type="submit" value="submit" id="liveAlertBtn" data-bs-dismiss="modal">Войти</button>
           </div>
         </div>
       </div>

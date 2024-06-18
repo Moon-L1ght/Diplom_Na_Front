@@ -129,10 +129,11 @@ const getters = {
         return state.user?.id;
     },
     isLoggedIn(state) {
-        const loggedOut =
-            state.auth_token == null || state.auth_token == JSON.stringify(null);
-        state.islogged = true;
-    },
+        return state.auth_token !== null && state.auth_token !== JSON.stringify(null);
+    }
+        // const loggedOut =
+        //     state.auth_token == null || state.auth_token == JSON.stringify(null);
+        // state.islogged = true;
     // isLoggedOut(state) {
     //     const loggedin =
     //         state.auth_token == null || state.auth_token == JSON.stringify(null);

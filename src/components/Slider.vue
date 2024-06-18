@@ -85,14 +85,14 @@ export default {
 </style>-->
 <template>
   <swiper
-    :slides-per-page="4"
+    :slides-per-page="3"
     :space-between="30"
     :loop="true"
     :navigation="true"
     :modules="modules"
     class="mySwiper"
   >
-      <swiper-slide v-for="(card, index) in cards" :key="index">
+      <swiper-slide v-for="(card, index) in cards" :key="index" style="max-width: 19rem;">
         <div class="slide-content">
           <div class="card" style="width: 18rem;">
             <img :src="card.imageUrl" class="card-img-top" :alt="'Card ' + (index + 1)">
@@ -115,9 +115,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation } from "swiper/modules";
+import {auto} from "@popperjs/core";
 
 
 export default {
+  methods: {
+    auto() {
+      return auto
+    }
+  },
   components: {
     Swiper,
     SwiperSlide
@@ -208,10 +214,6 @@ export default {
 </script>
 
 <style scoped>
-swiper-slide {
-  width:286px;
-}
-
 .slide-content {
   text-align: center;
 }

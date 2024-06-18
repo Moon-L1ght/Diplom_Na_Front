@@ -70,8 +70,11 @@ export default {
   components: {
     Login_form,
   },
-  methods: {
+  computed: {
     ...mapGetters(["isLoggedIn"]),
+
+  },
+  methods: {
     ...mapActions(["logoutUser"]),
   }
   // async created() {
@@ -110,4 +113,6 @@ export default {
   text-decoration: none;
   color: #ffffff;
 }
+
+
 </style>

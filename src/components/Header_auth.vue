@@ -35,26 +35,33 @@
         <div class="nav justify-content-end">
           <button class="btn btn-dark me-2"><router-link to="/cart" class="text-reset">Корзина</router-link></button>
         </div>
-        <div class="nav justify-content-end">
-          <li class="navbar-nav nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../../Img/user.svg" alt="Logo" class="dropdown-item-icon" />
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Войти</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Зарегистрироваться</a></li>
-            </ul>
-          </li>
-        </div>
+                  <div class="nav justify-content-end">
+                    <li class="navbar-nav nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../Img/user.svg" alt="Logo" class="dropdown-item-icon" />
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" @click="logoutUser">Выход</a></li>
+                      </ul>
+                    </li>
+                  </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  name: 'Header_auth'
+  name: 'Header_auth',
+  methods: {
+    ...mapGetters(["isLoggedIn"]),
+    ...mapActions(["logoutUser"]),
+  }
+
 }
 </script>
 
