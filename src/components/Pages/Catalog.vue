@@ -4,34 +4,39 @@ export default {
     return {
       categories: [
         {
-          title: 'Сабвуферы и аксессуары',
+          title: 'Динамики',
           count: 984,
-          price: '11.28',
-          image: 'https://via.placeholder.com/150' // Замените на настоящий URL изображения
+          image: 'Img/speakers2.webp' // Замените на настоящий URL изображения
         },
         {
-          title: 'Эстрадная акустика',
+          title: 'Мультимедиа',
           count: 1352,
-          price: '4',
-          image: 'https://via.placeholder.com/150' // Замените на настоящий URL изображения
+          image: 'Img/magnitoli.webp' // Замените на настоящий URL изображения
         },
         {
-          title: 'Автомобильная акустика',
+          title: 'Вибро-шумоизоляция',
           count: 1210,
-          price: '230',
-          image: 'https://via.placeholder.com/150' // Замените на настоящий URL изображения
+          image: 'Img/vibro-noiseisolation.webp' // Замените на настоящий URL изображения
         },
         {
-          title: 'Портативная акустика',
+          title: 'Приборы и датчики',
           count: 36,
-          price: '1250',
-          image: 'https://via.placeholder.com/150' // Замените на настоящий URL изображения
+          image: 'Img/devices.webp' // Замените на настоящий URL изображения
         },
         {
-          title: 'Готовые решения',
+          title: 'Кабель и комплектующие',
           count: 1,
-          price: '8290',
-          image: 'https://via.placeholder.com/150' // Замените на настоящий URL изображения
+          image: 'Img/cabels.webp' // Замените на настоящий URL изображения
+        },
+        {
+          title: 'Усилители и процессоры',
+          count: 1,
+          image: 'Img/processor.webp' // Замените на настоящий URL изображения
+        },
+        {
+          title: 'Короба и подиумы',
+          count: 1,
+          image: 'Img/box.webp' // Замените на настоящий URL изображения
         }
       ]
     }
@@ -46,12 +51,11 @@ export default {
       <div v-for="category in categories" :key="category.title" class="col-md-3 mb-4">
         <router-link to="/category" class="text-style">
           <div class="card h-100">
-            <img :src="category.image" class="card-img-top" alt="...">
+            <img :src="category.image" class="card-img-top img" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ category.title }}</h5>
               <p class="card-text">
-                <span class="text-success">({{ category.count }})</span><br>
-                от {{ category.price }} ₽
+                <span class="text-success">({{ category.count }})</span>
               </p>
             </div>
           </div>
@@ -64,5 +68,10 @@ export default {
 <style scoped>
 .text-style {
   text-decoration: none;
+}
+
+.img {
+
+ height: 100%;
 }
 </style>

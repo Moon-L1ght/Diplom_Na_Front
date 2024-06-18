@@ -2,9 +2,10 @@
   <footer class="backcol py-4 mt-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <h5>Название сайта</h5>
+        <div class="col-md-2">
+          <img src="/Users/slash/Documents/WebStorm/Diplom/Img/Logo.png" alt="logo" class="img-fluid">
         </div>
+        <div class="col-md-1"></div>
         <div class="col-md-3">
           <h5>Ссылки</h5>
           <ul class="nav flex-column">

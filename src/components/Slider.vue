@@ -92,9 +92,9 @@ export default {
     :modules="modules"
     class="mySwiper"
   >
-      <swiper-slide v-for="(card, index) in cards" :key="index" style="max-width: 19rem;">
+      <swiper-slide v-for="(card, index) in cards" :key="index">
         <div class="slide-content">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem; height: 100%;">
             <img :src="card.imageUrl" class="card-img-top" :alt="'Card ' + (index + 1)">
             <div class="card-body">
               <h5 class="card-title">{{ card.title }}</h5>
@@ -227,5 +227,13 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+</style>
+
+<style>
+.swiper-button-next:after, .swiper-button-prev:after {
+  background-color: #aaaaaa;
+  opacity: 0;
+  color: #36714b;
 }
 </style>

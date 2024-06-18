@@ -4,7 +4,7 @@
       :space-between="30"
       :loop="true"
       :autoplay="{
-        delay: 1000,
+        delay: 5000,
         disableOnInteraction: false,
       }"
       :navigation="true"
@@ -27,7 +27,7 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { Navigation } from 'swiper/modules';
+import {Autoplay, Navigation} from 'swiper/modules';
 import {auto} from "@popperjs/core";
 
 
@@ -133,7 +133,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation]
+      modules: [Navigation, Autoplay]
     };
   },
 };
@@ -153,6 +153,10 @@ img {
 
 .image-slider .swiper-button-next:after, .swiper-button-prev:after {
   color: black;
+}
+
+.swiper-button-next:hover {
+  opacity: 0.8;
 }
 
 </style>
