@@ -1,7 +1,7 @@
 <template>
   <swiper
-      :slides-per-view="7"
-      :space-between="30"
+      :slides-per-view="6"
+      :space-between="0"
       :loop="true"
       :autoplay="{
         delay: 5000,

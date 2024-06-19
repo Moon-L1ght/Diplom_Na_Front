@@ -149,7 +149,7 @@ export default {
                alt=""
                class=" my-3 rounded-5 img-fluid"
                />
-          <span class="font-monospace fs-6 mb-1" style="white-space: pre-line;">{{ currentService.description }}</span>
+          <span class="font-monospace fs-6 mb-1 text-container" style="white-space: pre-line; text-align: justify">{{ currentService.description }}</span>
         </div>
 <!--        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>-->
 <!--        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div>-->
@@ -201,4 +201,16 @@ export default {
 img {
   width: 100%;
 }
+
+.text-container {
+  display: grid;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.text-container span {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
 </style>

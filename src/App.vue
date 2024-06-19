@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-<!--    <Header_auth v-if="isLoggedIn"/>-->
     <Header />
     <router-view />
     <Footer />
@@ -10,7 +9,6 @@
 
 <script>
 import Header from './components/Header.vue'
-import Header_auth from './components/Header_auth.vue'
 import Footer from './components/Footer.vue'
 
 import axios from "axios";
@@ -18,28 +16,23 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   components: {
-    Header_auth,
     Header,
     Footer,
   },
-  // data () {
-  //   return {
-  //     user: null
-  //   }
-  // },
-  // methods: {
-  //   ...mapGetters(["isLoggedIn"]),
-  // }
-  // async created() {
-  //   const response = await axios.get('http://localhost:3001/login', {
-  //     headers: {
-  //       'Authorization': `Bearer ${localStorage.getItem('token')}`,
-  //     }
-  //   });
-  //   this.$store.dispatch('user', response.data);
-  // }
 }
 </script>
+
+<!--POST /login - Вход пользователя-->
+<!--DELETE /logout - Выход пользователяPOST-->
+<!--POST /signup - Регистрация пользователя-->
+<!--GET /products - Получить список всех продуктов-->
+<!--GET /products/by_category - Получить список продуктов по категории(/products/products?category=Динамики)-->
+<!--POST /products - Создать новый продукт-->
+<!--GET /products/:id - Получить информацию о конкретном продукте-->
+<!--GET /users/:user_id/cart - Получить текущую корзину пользователя-->
+<!--POST /users/:user_id/cart/add_item - Добавить товар в корзину пользователя-->
+<!--DELETE /users/:user_id/cart/remove_item/:product_id - Удалить товар из корзины пользователя-->
+<!--DELETE /users/:user_id/cart/clear - Очистить корзину пользователя-->
 
 <style>
 #app {

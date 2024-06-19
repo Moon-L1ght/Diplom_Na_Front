@@ -54,8 +54,8 @@
 
       </div>
       <div class="col-md-12 mt-5">
-        <div class="mt-3">
-          <Slider_Brands />
+        <div class="d-flex justify-content-center align-content-center slider-brands">
+          <Slider_Brands class="my-3" />
         </div>
         <div class="mt-5">
           <h2>Новости</h2>
@@ -138,5 +138,10 @@ export default {
   font-family: Arial;
   color: #969696;
   font-size: small;
+}
+
+.slider-brands {
+
+  background-color: #ffffff;
 }
 </style>
