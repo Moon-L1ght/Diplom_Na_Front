@@ -1,7 +1,7 @@
 <template>
   <main class="container my-5">
     <div class="row">
-      <div class="col-md-3 list-group list-group-flush d-flex flex-column">
+      <div class="col-md-3 list-group list-group-flush d-flex flex-column mb-5">
         <a href="#" class="list-group-item list-group-item-action">
           Динамики
         </a>

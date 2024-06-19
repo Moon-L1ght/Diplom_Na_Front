@@ -33,6 +33,12 @@ export default {
     ...mapActions(["registerUser", "loginUser", "logoutUser"]),
     signUp(event) {
       event.preventDefault();
+      // this.validateSignUpForm();
+
+      // if (Object.keys(this.errors).length > 0) {
+      //   return ;
+      // }
+
       let data = {
         user: {
           name: this.name,
@@ -60,27 +66,18 @@ export default {
       this.inputLogin = "";
       this.inputPassword = "";
     },
-    validateForm() {
-      this.errors = {}; // Очистка ошибок перед новой проверкой
-
-      if (!this.formData.inputLogin) {
-        this.errors.inputLogin = 'Email is required';
-      } else if (!this.validEmail(this.formData.email)) {
-        this.errors.inputLogin = 'Email is not valid.';
-      }
-      if (!this.formData.inputPassword) {
-        this.errors.inputPassword = 'Email is required.';
-      }
-      if (Object.keys(this.errors).length === 0) {
-        // Нет ошибок, отправить форму или выполнить действие
-        alert('Form submitted successfully!');
-      }
-    },
-    validEmail(email) {
-      // Простая проверка на валидность email
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
-      return re.test(email);
-    }
+    // validateSignUpForm() {
+    //   const formData = new FormData(document.querySelector('form'));
+    //   this.errors = {};
+    //   if (!this.validEmail(this.formData.inputLoginRegistration)) {
+    //     this.errors.inputLoginRegistration = 'Email is not valid.';
+    //   } else if (this.formData.inputPasswordRegistration !== this.formData.inputPasswordConfirm) {
+    //     this.errors.inputPasswordRegistration = "Password doesn't match"
+    //     console.error(this.errors.inputPasswordRegistration);
+    //   } else if (this.phoneNumber.length !== 11) {
+    //     this.errors.phoneNumber = 'Phone number is not valid.';
+    //   }
+    // },
   }
 }
 </script>
@@ -131,26 +128,26 @@ export default {
           <div class="modal-body">
             <div class="mb-3">
               <label for="name" class="form-label">Имя</label>
-              <input class="form-control input-color" id="name" v-model="name" placeholder="Имя">
+              <input class="form-control input-color" id="name" v-model="name" placeholder="Имя" required />
             </div>
             <div class="mb-3">
               <label for="inputLoginRegistration" class="form-label">Логин</label>
-              <input type="email" class="form-control input-color" id="inputLoginRegistration" v-model="inputLoginRegistration" placeholder="name@example.com">
+              <input type="email" class="form-control input-color" id="inputLoginRegistration" v-model="inputLoginRegistration" placeholder="name@example.com" required />
             </div>
             <div class="mb-3">
               <label for="inputPasswordRegistration" class="form-label">Пароль</label>
-              <input type="password" class="form-control input-color" id="inputPasswordRegistration" v-model="inputPasswordRegistration" aria-describedby="passwordHelpBlock">
+              <input type="password" class="form-control input-color" id="inputPasswordRegistration" v-model="inputPasswordRegistration" aria-describedby="passwordHelpBlock" required />
               <div id="passwordHelpBlock" class="form-text">
                 Ваш пароль должен содержать от 8-20 символов, содержать буквы и цифры, и не содержать пробелов, специальных знаков, или эмодзи.
               </div>
             </div>
             <div class="mb-3">
               <label for="inputPasswordConfirm" class="form-label">Подтвердите пароль</label>
-              <input type="password" class="form-control input-color" id="inputPasswordConfirm" v-model="inputPasswordConfirm" autocomplete="new-password" spellcheck="false">
+              <input type="password" class="form-control input-color" id="inputPasswordConfirm" v-model="inputPasswordConfirm" autocomplete="new-password" spellcheck="false" required />
             </div>
             <div class="mb-3">
               <label for="phoneNumber" class="form-label">Номер телефона</label>
-              <input type="tel" class="form-control input-color" id="phoneNumber" v-model="phoneNumber" placeholder="+7 (___) ___-____">
+              <input type="tel" class="form-control input-color" id="phoneNumber" v-model="phoneNumber" placeholder="+7 (___) ___-____" required />
             </div>
             <div class="text-center">
               Уже зарегистрированы?

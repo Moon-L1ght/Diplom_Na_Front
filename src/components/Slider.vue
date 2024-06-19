@@ -33,15 +33,15 @@ import {Autoplay, Navigation} from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 export default {
-  components: {Swiper, SwiperSlide},
+  components: { Swiper, SwiperSlide },
   data() {
     return {
       cards: [
         {
-          imageUrl: 'https://via.placeholder.com/150',
-          title: 'Выигранные комплекты',
+          imageUrl: 'Img/Box2.webp',
+          title: 'Конструкторы (распилы) коробов',
           description: 'Выгодные комплекты',
-          price: 'от 80 840 ₽'
+          price: 'от 1 260 ₽'
         },
         {
           imageUrl: 'Img/Slider.png',
@@ -50,22 +50,22 @@ export default {
           price: 'от 127 ₽'
         },
         {
-          imageUrl: 'https://via.placeholder.com/150',
-          title: 'Адаптеры штатных разъемов по акции',
+          imageUrl: 'Img/cabels.webp',
+          title: 'Различные кабеля по акции',
           description: 'Адаптеры штатных разъемов по акции',
-          price: 'от 20 ₽'
+          price: 'от 15 ₽'
         },
         {
-          imageUrl: 'https://via.placeholder.com/150',
-          title: 'Новые со скидкой',
+          imageUrl: 'Img/Ysil.webp',
+          title: 'Усилители со скидкой',
           description: 'Новые со скидкой',
-          price: 'от 20 ₽'
+          price: 'от 6 000 ₽'
         },
         {
-          imageUrl: 'https://via.placeholder.com/150',
-          title: 'Уцененные б/у',
-          description: 'Уцененные б/у',
-          price: 'от 80 840 ₽'
+          imageUrl: 'Img/Mag.jpg',
+          title: 'Магнитолы со скидкой',
+          description: '',
+          price: 'от 8 000 ₽'
         },
       ],
     };
