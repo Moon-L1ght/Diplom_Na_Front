@@ -106,16 +106,20 @@ export default {
       <tr v-for="(item, index) in items" :key="index">
         <td>
           <img :src="item.image" class="img-thumbnail" alt="Item image" width="50" height="50">
-          <span>{{ item.name }}</span>
+          <span class="mx-3">{{ item.name }}</span>
         </td>
         <td></td>
-        <td>{{ item.price }} ₽</td>
         <td>
+          <div>{{ item.price }} ₽</div>
+        </td>
+        <td class="">
           <button class="btn btn-outline-success btn-sm" @click="decrementQuantity(item)">-</button>
           {{ item.quantity }}
           <button class="btn btn-outline-success btn-sm" @click="incrementQuantity(item)">+</button>
         </td>
-        <td>{{ item.price * item.quantity }} ₽</td>
+        <td>
+          {{ item.price * item.quantity }} ₽
+        </td>
         <td>
           <button class="btn btn-success btn-sm" @click="removeItem(index)">Удалить</button>
         </td>

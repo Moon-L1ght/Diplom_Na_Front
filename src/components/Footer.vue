@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2">
-          <img src="/Users/slash/Documents/WebStorm/Diplom/Img/Logo.png" alt="logo" class="img-fluid">
+<!--          <img src="Img/Logo.png" alt="logo" class="img-fluid">-->
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-3">

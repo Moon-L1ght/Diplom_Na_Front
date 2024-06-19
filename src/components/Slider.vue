@@ -44,7 +44,7 @@ export default {
           price: 'от 80 840 ₽'
         },
         {
-          imageUrl: 'https://via.placeholder.com/150',
+          imageUrl: 'Img/Slider.png',
           title: 'Вибро-шумоизоляция по акции',
           description: 'Вибро-шумоизоляция по акции',
           price: 'от 127 ₽'

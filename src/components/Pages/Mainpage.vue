@@ -25,27 +25,30 @@
         </a>
       </div>
       <div class="col-md-9">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <ol class="carousel-indicators clear-dots my-auto">
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" style="background-color: #000000"></li>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" style="background-color: #3c3c3c"></li>
-          </ol>
-          <div class="carousel-inner" style="height: 253px;">
-            <div class="carousel-item active">
-              <div class="d-block w-100" style="height: 230px; background-color: #ccc;"><img src="../../../Img/Logo.png" alt="Logo" class="img-fluid"></div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block w-100" style="height: 230px; background-color: #ccc;">КОНТЕНТ</div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+<!--        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
+<!--          <ol class="carousel-indicators clear-dots my-auto">-->
+<!--            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" style="background-color: #000000"></li>-->
+<!--            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" style="background-color: #3c3c3c"></li>-->
+<!--          </ol>-->
+<!--          <div class="carousel-inner" style="height: 253px;">-->
+<!--            <div class="carousel-item active">-->
+<!--              <div class="d-block w-100" style="height: 230px; background-color: #ccc;"><img src="../../../Img/Logo.png" alt="Logo" class="img-fluid"></div>-->
+<!--            </div>-->
+<!--            <div class="carousel-item">-->
+<!--              <div class="d-block w-100" style="height: 230px; background-color: #ccc;">КОНТЕНТ</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">-->
+<!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Previous</span>-->
+<!--          </a>-->
+<!--          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">-->
+<!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Next</span>-->
+<!--          </a>-->
+<!--        </div>-->
+        <div class="slider-Brands">
+          <Slider_Banners />
         </div>
         <h2 class="my-4">Спецпредложения</h2>
         <div class="">
@@ -58,7 +61,7 @@
           <Slider_Brands class="my-3" />
         </div>
         <div class="mt-5">
-          <h2>Новости</h2>
+          <h2 class="mb-4">Новости</h2>
           <News />
         </div>
         <div class="mt-4 text-center">
@@ -93,9 +96,11 @@
 import Slider from '../Slider.vue'
 import Slider_Brands from '../Slider_Brands.vue';
 import News from '../News.vue';
+import Slider_Banners from "@/components/Slider_Banners.vue";
 
 export default {
   components: {
+    Slider_Banners,
     Slider,
     Slider_Brands,
     News,
@@ -110,6 +115,9 @@ export default {
 </script>
 
 <style scoped>
+.slider-brands {
+  background-color: #ffffff
+}
 .carousel-inner {
   height: 300px;
 }
@@ -138,10 +146,5 @@ export default {
   font-family: Arial;
   color: #969696;
   font-size: small;
-}
-
-.slider-brands {
-
-  background-color: #ffffff;
 }
 </style>

@@ -60,14 +60,34 @@ export default {
       this.inputLogin = "";
       this.inputPassword = "";
     },
+    validateForm() {
+      this.errors = {}; // Очистка ошибок перед новой проверкой
 
+      if (!this.formData.inputLogin) {
+        this.errors.inputLogin = 'Email is required';
+      } else if (!this.validEmail(this.formData.email)) {
+        this.errors.inputLogin = 'Email is not valid.';
+      }
+      if (!this.formData.inputPassword) {
+        this.errors.inputPassword = 'Email is required.';
+      }
+      if (Object.keys(this.errors).length === 0) {
+        // Нет ошибок, отправить форму или выполнить действие
+        alert('Form submitted successfully!');
+      }
+    },
+    validEmail(email) {
+      // Простая проверка на валидность email
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
+      return re.test(email);
+    }
   }
 }
 </script>
 
 <template>
 
-  <form @submit="signIn">
+  <form @submit="validateForm">
     <div v-bind="$attrs" class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -94,7 +114,7 @@ export default {
           </div>
           <div class="modal-footer">
             <div id="liveAlertPlaceholder"></div>
-            <button class="btn btn-dark w-100" type="submit" value="submit" id="liveAlertBtn" data-bs-dismiss="modal">Войти</button>
+            <button class="btn btn-dark w-100" :disabled="inputLogin === '' || inputPassword === ''" type="submit" value="submit" id="liveAlertBtn" data-bs-dismiss="modal">Войти</button>
           </div>
         </div>
       </div>
@@ -138,7 +158,14 @@ export default {
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-dark w-100" type="submit" value="submit">Зарегистрироваться</button>
+            <button class="btn btn-dark w-100"
+                    type="submit"
+                    value="submit"
+                    :disabled="inputLoginRegistration === '' ||
+                               inputPasswordRegistration === '' ||
+                               inputPasswordConfirm === '' ||
+                               phoneNumber === ''"
+            >Зарегистрироваться</button>
           </div>
         </div>
       </div>

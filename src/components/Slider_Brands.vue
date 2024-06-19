@@ -140,9 +140,6 @@ export default {
 </script>
 
 <style scoped>
-.mySwiper {
-  background-color: #ffffff;
-}
 .slide-content {
   text-align: center;
 }
