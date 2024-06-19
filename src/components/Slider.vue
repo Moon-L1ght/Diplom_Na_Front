@@ -17,7 +17,6 @@
           <img :src="card.imageUrl" class="card-img-top" :alt="'Card ' + (index + 1)">
           <div class="card-body">
             <h5 class="card-title">{{ card.title }}</h5>
-            <p class="card-text">{{ card.description }}</p>
             <p class="card-text">{{ card.price }}</p>
           </div>
         </div>
@@ -39,66 +38,35 @@ export default {
     return {
       cards: [
         {
-        imageUrl: 'https://via.placeholder.com/150',
-        title: 'Выигранные комплекты',
-        description: 'Выгодные комплекты',
-        price: 'от 80 840 ₽'
-  },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
-          title: 'Тепло-шумоизоляция по акции',
-        description: 'Тепло-шумоизоляция по акции',
-        price: 'от 127 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
-          title: 'Адаптеры штатных разъемов по акции',
-        description: 'Адаптеры штатных разъемов по акции',
-        price: 'от 20 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
-          title: 'Новые со скидкой',
-        description: 'Новые со скидкой',
-        price: 'от 20 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
-          title: 'Уцененные б/у',
-        description: 'Уцененные б/у',
-        price: 'от 80 840 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
+          imageUrl: 'https://via.placeholder.com/150',
           title: 'Выигранные комплекты',
-        description: 'Выгодные комплекты',
-        price: 'от 80 840 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
-          title: 'Тепло-шумоизоляция по акции',
-        description: 'Тепло-шумоизоляция по акции',
-        price: 'от 127 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
+          description: 'Выгодные комплекты',
+          price: 'от 80 840 ₽'
+        },
+        {
+          imageUrl: 'https://via.placeholder.com/150',
+          title: 'Вибро-шумоизоляция по акции',
+          description: 'Вибро-шумоизоляция по акции',
+          price: 'от 127 ₽'
+        },
+        {
+          imageUrl: 'https://via.placeholder.com/150',
           title: 'Адаптеры штатных разъемов по акции',
-        description: 'Адаптеры штатных разъемов по акции',
-        price: 'от 20 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
+          description: 'Адаптеры штатных разъемов по акции',
+          price: 'от 20 ₽'
+        },
+        {
+          imageUrl: 'https://via.placeholder.com/150',
           title: 'Новые со скидкой',
-        description: 'Новые со скидкой',
-        price: 'от 20 ₽'
-    },
-    {
-      imageUrl: 'https://via.placeholder.com/150',
+          description: 'Новые со скидкой',
+          price: 'от 20 ₽'
+        },
+        {
+          imageUrl: 'https://via.placeholder.com/150',
           title: 'Уцененные б/у',
-        description: 'Уцененные б/у',
-        price: 'от 80 840 ₽'
-    },
-        // Add more cards as needed
+          description: 'Уцененные б/у',
+          price: 'от 80 840 ₽'
+        },
       ],
     };
   },
