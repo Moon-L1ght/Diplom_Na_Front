@@ -2,12 +2,12 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -23,11 +23,11 @@
               <img src="..." class="d-block w-100" alt="...">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -40,11 +40,24 @@
         <div class="mb-3">
           <div v-for="(item, index) in items" :key="index">
             <button class="btn btn-outline-success btn-sm" @click="decrementQuantity(item.quantity)">-</button>
-              1
+            1
             <button class="btn btn-outline-success btn-sm" @click="incrementQuantity(item.quantity)">+</button>
           </div>
         </div>
-        <button class="btn btn-success btn-lg w-100 mb-2">В КОРЗИНУ</button>
+        <button class="btn btn-success btn-lg w-100 mb-2" @click="addToCart(item)" id="liveToastBtn">В КОРЗИНУ</button>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+        </div>
+
         <p class="text-success">В наличии</p>
         <p>Производитель: AurA (Аура)</p>
       </div>
@@ -66,10 +79,30 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-          <p>AurA Venom-D1.800 Ultra - 1-канальный усилитель мощности. Ультра-компактный дизайн.</p>
+          <span class="mt-2 mx-1">AurA Venom-D1.800 Ultra - 1-канальный усилитель мощности. Ультра-компактный дизайн.</span>
         </div>
         <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
-          <!-- Specifications content -->
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Основные характеристики</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th>Производитель</th>
+              <td colspan="2">Aura</td>
+            </tr>
+            <tr>
+              <th scope="row">Модель</th>
+              <td colspan="2">Venom-D1.800 Ultra</td>
+
+            </tr>
+            </tbody>
+          </table>
         </div>
         <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
           <!-- Comments content -->
@@ -83,13 +116,17 @@
 </template>
 
 <script>
+import 'bootstrap';
 export default {
   name: 'ProductPage',
   data() {
     return {
-      items: {
-        quantity: 1,
-      }
+      items: [
+        {
+          quantity: 1,
+        }
+      ],
+      cart: []
     }
   },
   methods: {
@@ -101,6 +138,23 @@ export default {
         item.quantity--;
       }
     },
+    addToCart(item) {
+      const itemInCart = this.cart.find(cartItem => cartItem === item);
+      const toastTrigger = document.getElementById('liveToastBtn');
+      const toastLiveExample = document.getElementById('liveToast');
+
+      if (!itemInCart) {
+        this.cart.push({ ...item });
+      } else {
+        itemInCart.quantity += item.quantity;
+      }
+      if (toastTrigger) {
+        const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+        toastTrigger.addEventListener('click', () => {
+          toastBootstrap.show();
+        });
+      }
+    }
   }
 };
 </script>

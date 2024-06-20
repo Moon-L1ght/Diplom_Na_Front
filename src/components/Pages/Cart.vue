@@ -1,66 +1,5 @@
 <script>
 export default {
-  data() {
-    return {
-      items: [
-        // {
-        //   name: 'AurA Venom-D1.800 Ultra',
-        //   price: 11690,
-        //   quantity: 1,
-        //   image: 'https://www.loudsound.ru/upload/mw4w6YsQolD7BYBVBagv/upload/iblock/952/61yia6hemojb9kzpv6zv4p9cpiqid0z6/AurA-Venom_D1.800-Ultra-1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-        // {
-        //   name: 'Acv ADX-211 BM DSP',
-        //   price: 7777,
-        //   quantity: 1,
-        //   image: 'path/to/image1.jpg'
-        // },
-      ],
-      // bonuses: 156
-    }
-  },
   computed: {
     totalPrice() {
       return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -85,7 +24,7 @@ export default {
       this.items = [];
     }
   },
-  }
+}
 </script>
 
 <template>

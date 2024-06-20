@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="row mt-3">
-      <!-- Filters Section -->
       <div class="col-md-3 margin-top mb-3">
         <div class="accordion" id="filterAccordion">
           <div class="accordion-item" >
@@ -12,11 +11,6 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#filterAccordion">
               <div class="accordion-body">
-<!--                <input type="range" class="form-range" id="priceRange" min="0" :max="maxPrice">-->
-<!--                <div class="d-flex justify-content-between">-->
-<!--                  <span>0</span>-->
-<!--                  <span>{{ maxPrice }}</span>-->
-<!--                </div>-->
                 <Slider_price
                     :max="700"
                     v-model:min-value="sliderMin"

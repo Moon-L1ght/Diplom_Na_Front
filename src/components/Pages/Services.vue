@@ -115,9 +115,7 @@ export default {
     },
     addToCart() {
       if (this.currentService) {
-        // Здесь можно выполнить запрос на добавление в корзину
-        // Например, используя fetch или axios
-        fetch('/api/cart', {
+        fetch('/add_to_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -159,29 +157,8 @@ export default {
         >
           {{ service.name }}
         </button>
-<!--        <div class="d-flex align-items-center mt-3">-->
-<!--          <div class="btn-group">-->
-<!--            <button type="button" class="btn btn-outline-dark" @click="addToCart">Добавить в корзину</button>-->
-<!--            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                <span class="visually-hidden">Toggle Dropdown</span>-->
-<!--            </button>-->
-<!--            <ul class="dropdown-menu">-->
-<!--              <li v-for="service in services"-->
-<!--                  :key="service.id"-->
-<!--              >-->
-<!--                <a class="dropdown-item" @click="selectService(service)">-->
-<!--                  {{ service.name }}-->
-<!--                </a>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
         <button class="btn btn-outline-success mt-3 w-100" data-bs-toggle="pill" aria-controls="v-pills-tab" @click="addToCart">
-          Записаться...
-<!--          <div class="mb-3">-->
-<!--            <label for="birthDate" class="form-label">Дата рождения</label>-->
-<!--            <input type="date" class="form-control" id="birthDate" v-model="profile.birthDate">-->
-<!--          </div>-->
+          Записаться
         </button>
       </div>
       <div class="col-md-9 tab-content" id="v-pills-tabContent">
@@ -193,45 +170,8 @@ export default {
                />
           <span class="font-monospace fs-5 mb-1 text-container" style="white-space: pre-line; text-align: justify">{{ currentService.description }}</span>
         </div>
-<!--        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>-->
-<!--        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div>-->
-<!--        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">...</div>-->
-<!--        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">...</div>-->
       </div>
     </div>
-
-    <!--    <div class="row">-->
-<!--      <div class="col-md-3">-->
-<!--        <div class="list-group">-->
-<!--&lt;!&ndash;          <button type="button" class="list-group-item list-group-item-action list-group-item-dark active" aria-current="true">&ndash;&gt;-->
-<!--&lt;!&ndash;            The current button&ndash;&gt;-->
-<!--&lt;!&ndash;          </button>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button" class="list-group-item list-group-item-action" data-bs-target="# {{ services.id }}" aria-expanded="false" aria-controls=" {{ services.id }}">A second button item</button>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button" class="list-group-item list-group-item-action" data-bs-target="# {{ services.id }}" aria-expanded="false" aria-controls=" {{ services.id }}">A third button item</button>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button" class="list-group-item list-group-item-action">A disabled button item</button>&ndash;&gt;-->
-<!--          <button-->
-<!--              v-for="service in services"-->
-<!--              :key="service.id"-->
-<!--              type="button"-->
-<!--              class="list-group-item list-group-item-action"-->
-<!--              :class="{ 'list-group-item-dark active' : currentService && currentService.id === service.id }"-->
-<!--              @click="selectService(service)"-->
-<!--          >-->
-<!--            {{ service.name }}-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-9">-->
-<!--        <div class="d-flex align-items-center fade show">-->
-<!--          <img :src="currentService.image" alt="Картинка" class="img-thumbnail me-3" style="width: 100px; height: 100px;">-->
-<!--          <div>-->
-<!--            <h5 class="mb-1">{{ currentService.name }}</h5>-->
-<!--            <p class="mb-1">{{ currentService.description }}</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
   </div>
 </template>
 

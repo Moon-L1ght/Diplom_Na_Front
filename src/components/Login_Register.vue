@@ -111,7 +111,7 @@ export default {
           </div>
           <div class="modal-footer">
             <div id="liveAlertPlaceholder"></div>
-            <button class="btn btn-dark w-100" :disabled="inputLogin === '' || inputPassword === ''" type="submit" value="submit" id="liveAlertBtn" data-bs-dismiss="modal">Войти</button>
+            <button class="btn btn-dark w-100" :disabled="inputLogin === '' || inputPassword === ''" type="submit" value="submit" id="liveAlertBtn" >Войти</button>
           </div>
         </div>
       </div>

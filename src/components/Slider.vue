@@ -87,4 +87,9 @@ export default {
 .swiper-button-next:hover:after, .swiper-button-prev:hover:after  {
   opacity: 1;
 }
+@media (max-width: 768px) {
+  .swiper-slide {
+    width: 50%; /* или любая другая ширина */
+  }
+}
 </style>

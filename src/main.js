@@ -1,6 +1,7 @@
 //import './assets/main.css'
 import "bootstrap/dist/css/bootstrap.css";
 import "swiper/css";
+import 'bootstrap';
 
 import { createApp } from 'vue'
 import App from './App.vue'

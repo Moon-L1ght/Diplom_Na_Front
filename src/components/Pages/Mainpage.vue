@@ -2,51 +2,29 @@
   <main class="container my-5">
     <div class="row">
       <div class="col-md-3 list-group list-group-flush d-flex flex-column mb-5">
-        <a href="#" class="list-group-item list-group-item-action">
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Динамики
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Мультимедиа
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Вибро-шумоизоляция
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Приборы и датчики
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Кабель и комплектующие
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Усилители и процессоры
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        </router-link>
+        <router-link to="/category" class="list-group-item list-group-item-action">
           Короба и подиумы
-        </a>
+        </router-link>
       </div>
       <div class="col-md-9">
-<!--        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
-<!--          <ol class="carousel-indicators clear-dots my-auto">-->
-<!--            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" style="background-color: #000000"></li>-->
-<!--            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" style="background-color: #3c3c3c"></li>-->
-<!--          </ol>-->
-<!--          <div class="carousel-inner" style="height: 253px;">-->
-<!--            <div class="carousel-item active">-->
-<!--              <div class="d-block w-100" style="height: 230px; background-color: #ccc;"><img src="../../../Img/Logo.png" alt="Logo" class="img-fluid"></div>-->
-<!--            </div>-->
-<!--            <div class="carousel-item">-->
-<!--              <div class="d-block w-100" style="height: 230px; background-color: #ccc;">КОНТЕНТ</div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">-->
-<!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--            <span class="visually-hidden">Previous</span>-->
-<!--          </a>-->
-<!--          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">-->
-<!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--            <span class="visually-hidden">Next</span>-->
-<!--          </a>-->
-<!--        </div>-->
         <div class="slider-Brands">
           <Slider_Banners />
         </div>
